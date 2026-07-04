@@ -1,6 +1,10 @@
+import sys
+import os
+# Add parent directory to sys.path to resolve 'app' imports correctly when running in Streamlit Cloud
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import streamlit as st
 import pandas as pd
-import os
 from dotenv import load_dotenv
 import google.generativeai as genai
 from app.chat_engine import ChatEngine
